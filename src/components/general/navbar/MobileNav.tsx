@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { navLinks } from "./Navbar";
+import { LuDownload } from "react-icons/lu";
+import LinkButton from "../LinkButton";
 interface MobileNavProps {
   navOpen: boolean;
 }
@@ -36,6 +38,13 @@ export default function MobileNav({ navOpen }: MobileNavProps) {
             </Link>
           </li>
         ))}
+        <LinkButton
+          href="/documents/play.pdf"
+          label="Download CV"
+          download
+          icon={LuDownload}
+          iconPosition="left"
+        />
       </ul>
     </>
   );

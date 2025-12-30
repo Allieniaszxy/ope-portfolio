@@ -2,7 +2,7 @@ import Typewriter from "typewriter-effect";
 export default function AnimatedIntro() {
   return (
     <div className="text-lg h-30 px-8 text-center font-medium text-gray-400 sm:text-2xl">
-      Hi, I'm Opeyemi - A passionate{" "}
+      Hi, I&apos;m Opeyemi - A passionate{" "}
       <span className="text-indigo-400 font-bold ">
         <Typewriter
           options={{
@@ -14,6 +14,9 @@ export default function AnimatedIntro() {
             ],
             autoStart: true,
             loop: true,
+            delay: 75,
+            deleteSpeed: 50,
+            wrapperClassName: "inline-block py-6",
           }}
         />
       </span>
