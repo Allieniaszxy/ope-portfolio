@@ -4,27 +4,27 @@ import Image from "next/image";
 
 const testimonials = [
   {
-    name: "John Doe",
+    name: "Jane Doe",
     position: "CEO, Company",
     rating: 5,
     testimonial:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec metus nec ante hendrerit placerat. Nullam nec metus nec ante hendrerit placerat.",
-    image: "/images/moses.jpg",
+    image: "/images/hero.jpg",
   },
   {
-    name: "John Doe",
+    name: "Jane Doe",
     position: "CEO, Company",
     testimonial:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec metus nec ante hendrerit placerat. Nullam nec metus nec ante hendrerit placerat.",
-    image: "/images/moses.jpg",
+    image: "/images/hero1.jpg",
     rating: 4,
   },
   {
-    name: "John Doe",
+    name: "Jane Doe",
     position: "CEO, Company",
     testimonial:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec metus nec ante hendrerit placerat. Nullam nec metus nec ante hendrerit placerat.",
-    image: "/images/moses.jpg",
+    image: "/images/hero2.jpg",
     rating: 3,
   },
 ];

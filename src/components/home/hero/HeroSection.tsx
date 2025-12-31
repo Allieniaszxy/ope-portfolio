@@ -32,7 +32,7 @@ export default function HeroSection() {
           <div className="absolute inset-0 rounded-full bg-linear-to-r from-blue-500 to-purple-600 blur-lg opacity-50 animate-pulse" />
           <div className="relative w-full h-full rounded-full overflow-hidden z-10">
             <Image
-              src="/images/moses.jpg"
+              src="/images/hero.jpg"
               alt="Hero"
               fill
               sizes="144px"

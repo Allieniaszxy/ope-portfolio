@@ -39,7 +39,7 @@ export default function MobileNav({ navOpen }: MobileNavProps) {
           </li>
         ))}
         <LinkButton
-          href="/documents/play.pdf"
+          href="/documents/LESHI OPEYEMI SOFIAT-1.pdf"
           label="Download CV"
           download
           icon={LuDownload}

@@ -54,7 +54,7 @@ export default function Navbar() {
         </ul>
         <div className="hidden lg:block">
           <LinkButton
-            href="/documents/play.pdf"
+            href="/documents/LESHI OPEYEMI SOFIAT-1.pdf"
             label="Download CV"
             download
             icon={LuDownload}
