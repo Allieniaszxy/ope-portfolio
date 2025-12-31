@@ -1,4 +1,7 @@
 import Image from "next/image";
+import LinkButton from "../general/LinkButton";
+
+import { FaGithub } from "react-icons/fa6";
 
 interface ProjectCardProps {
   title: string;
@@ -26,6 +29,12 @@ export default function ProjectCard({
         {title}
       </p>
       <p className="text-gray-400 font-medium">{description}</p>
+      <LinkButton
+        href={link}
+        label="View Project"
+        icon={FaGithub}
+        iconPosition="right"
+      />
     </div>
   );
 }

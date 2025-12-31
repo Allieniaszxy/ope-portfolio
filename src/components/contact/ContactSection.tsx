@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+import toast from "react-hot-toast";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaEnvelope, FaPhone } from "react-icons/fa6";
 import { LuSend } from "react-icons/lu";
@@ -25,12 +29,48 @@ const contactInfo = [
 ];
 
 export default function ContactSection() {
+  const [loading, setLoading] = useState(false);
   const InputStyles =
     "px-4 py-3.5 my-4 bg-slate-800 outline-none rounded-md w-full text-gray-200 placeholder-gray-400";
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    setLoading(true);
+    event.preventDefault();
+
+    const formData = new FormData(event.target as HTMLFormElement);
+    formData.append("access_key", "c5bcb516-8e8f-4077-9599-9fe709773928");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      (event.target as HTMLFormElement).reset();
+      toast.success("Message sent successfully", {
+        style: {
+          borderRadius: "10px",
+          background: "#4f39f6",
+          color: "#fff",
+        },
+      });
+    } else {
+      toast.error("Message not sent, please try again", {
+        style: {
+          borderRadius: "10px",
+          background: "#4f39f6",
+          color: "#fff",
+        },
+      });
+    }
+    setLoading(false);
+  };
+
   return (
     <section id="contact" className="py-16 lg:py-30">
       <div className="w-[90%] md:w-[80%] lg:w-[70%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
-        <div>
+        <div data-aos="fade-right">
           <h2 className="font-bold tracking-wide text-transparent bg-clip-text bg-linear-to-r from-indigo-500 to-gray-300 py-3 text-3xl md:text-4xl">
             Ready to Collaborate?
           </h2>
@@ -59,35 +99,51 @@ export default function ContactSection() {
         </div>
 
         {/* form */}
-        <div>
-          <form action="" className="rounded-lg bg-lsate-900 px-4 py-8">
+        <div data-aos="zoom-in">
+          <form
+            action=""
+            className="rounded-lg bg-lsate-900 px-4 py-8"
+            onSubmit={onSubmit}
+          >
             <input
               type="text"
               placeholder="Your Name"
               className={InputStyles}
               required
+              name="name"
             />
             <input
               type="email"
               placeholder="Your Email"
               className={InputStyles}
               required
+              name="email"
             />
             <input
               type="text"
               placeholder="Subject of message"
               className={InputStyles}
               required
+              name="subject"
             />
             <textarea
               placeholder="Your Message"
               className={`${InputStyles} resize-none `}
               rows={5}
               required
+              name="message"
             ></textarea>
             <button className="w-full py-4 bg-linear-to-r from-blue-900 to-purple-800 hover:text-white font-semibold rounded-lg transition-all hover:from-blue-800 hover:to-purple-700 text-white flex items-center justify-center gap-2 cursor-pointer diabled:cursor-not-allowed disabled:opacity-70">
-              <LuSend size={20} />
-              Send Message
+              {loading ? (
+                <>
+                  <span className="w-6 h-6 border-3 border-white/30 border-t-white rounded-full animate-spin"></span>{" "}
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <LuSend size={20} /> Send Message
+                </>
+              )}
             </button>
           </form>
         </div>

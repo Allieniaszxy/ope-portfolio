@@ -4,9 +4,10 @@ import { LuDownload } from "react-icons/lu";
 import LinkButton from "../LinkButton";
 interface MobileNavProps {
   navOpen: boolean;
+  setNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function MobileNav({ navOpen }: MobileNavProps) {
+export default function MobileNav({ navOpen, setNavOpen }: MobileNavProps) {
   return (
     <>
       {/* insetBackground */}
@@ -31,6 +32,7 @@ export default function MobileNav({ navOpen }: MobileNavProps) {
         {navLinks.map((link) => (
           <li key={link.url}>
             <Link
+              onClick={() => setNavOpen(false)}
               className="flex justify-center text-xl items-center rounded-lg font-medium hover:bg-slate-700/50 hover:text-cyan-300 transition-all duration-300 border-b border-slate-700/30 w-full text-center py-4 px-6"
               href={link.url}
             >

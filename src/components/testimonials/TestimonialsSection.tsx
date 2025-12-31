@@ -38,6 +38,8 @@ export default function TestimonialsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-[90%] sm:w-[80%] mx-auto mt-12">
           {testimonials.map((testimonial, index) => (
             <div
+              data-aos="fade-right"
+              data-aos-delay={index * 100}
               key={index}
               className="bg-gray-800 p-6 rounded-xl border-gray-700 border shadow-lg "
             >

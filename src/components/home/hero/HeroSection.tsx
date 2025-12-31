@@ -28,7 +28,10 @@ export default function HeroSection() {
 
       {/* FOREGROUND CONTENT */}
       <div className="relative z-10 flex flex-col items-center">
-        <div className="relative w-36 h-36 flex items-center justify-center">
+        <div
+          className="relative w-36 h-36 flex items-center justify-center"
+          data-aos="fade-up"
+        >
           <div className="absolute inset-0 rounded-full bg-linear-to-r from-blue-500 to-purple-600 blur-lg opacity-50 animate-pulse" />
           <div className="relative w-full h-full rounded-full overflow-hidden z-10">
             <Image
@@ -42,7 +45,11 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <h1 className="mt-6 text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-purple-300">
+        <h1
+          className="my-6 text-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-purple-300"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           Hi, I&apos;m a Web Designer
         </h1>
 
@@ -52,7 +59,11 @@ export default function HeroSection() {
           href="#projects"
           label="See my work"
           icon={LuArrowRight}
+          iconPosition="right"
           rounded
+          aosType="fade-up"
+          aosDelay={600}
+          animate
         />
       </div>
     </section>
